@@ -1,21 +1,21 @@
 def count_all_palindromic_substrings(s):
-    all_palindromes = []
+    count = 0
 
     def expand_around_center(left, right):
+        nonlocal count
         while left >= 0 and right < len(s) and s[left] == s[right]:
-            all_palindromes.append(s[left:right+1])
+            count += 1
             left -= 1
             right += 1
 
     for i in range(len(s)):
-        expand_around_center(i, i)
+        expand_around_center(i, i)  # 对于奇数长度的回文
         if i + 1 < len(s):
-            expand_around_center(i, i + 1)
+            expand_around_center(i, i + 1)  # 对于偶数长度的回文
 
-    return len(all_palindromes), all_palindromes
+    return count
 
 if __name__ == '__main__':
-	# test case
-	count, palindromes = count_all_palindromic_substrings("www")
-	print("Total palindromes:", count)
-	print("List palindromes：", palindromes)
+    # test case
+    palindrome_count = count_all_palindromic_substrings("wowpurerocks")
+    print("Total palindromes:", palindrome_count)
