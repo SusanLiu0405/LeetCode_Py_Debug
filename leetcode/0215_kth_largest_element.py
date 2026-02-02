@@ -9,3 +9,5 @@ class Solution:
         return heap[0]
 
 sol = Solution()
+
+
