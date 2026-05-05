@@ -19,7 +19,5 @@ has_token = True
 result = 2
 C T . T . C C C C C
 0 1 2 3 4 5 6 7 8 9
-
-
 '''
         
