@@ -14,13 +14,19 @@ class Solution:
             if curr_word in wordSet:
                 wordSet.remove(curr_word)
                 flag = self.dfs(wordSet, s, i + 1)
-                if flag:
-                    print(wordSet)
-                    print(idx)
-                    return True
                 wordSet.add(curr_word)
+                if flag:
+                    return True
+                
         return False
+'''
+        hashset int 
+浅拷贝            1
+深拷贝      1
 
+浅拷贝只copy引用（地址），不copy对象
+深拷贝：重新创建一个一模一样的对象
+'''
 sol = Solution()
 s = "abcd"
 wordDict = ["a","ab","bcd","cd"]
